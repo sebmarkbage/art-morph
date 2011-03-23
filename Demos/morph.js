@@ -19,10 +19,12 @@ var shape = new ART.Shape()
 	.fill('#F00')
 	.inject(canvas);
 
-var fx = new Fx({ duration: 4000 });
-fx.set = function(delta){
-	shape.draw(morph.compute(delta));
-};
-fx.start(0, 1);
+var start = +new Date(), timer = setInterval(function(){
+	var delta = (new Date() - start) / 4000;
+	if (delta > 1)
+		clearInterval(timer);
+	else
+		shape.draw(morph.compute(delta));
+}, 1000 / 60);
 
 canvas.inject(document.body);
