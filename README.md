@@ -1,3 +1,1 @@
-ART Path Morph
-==============
-Plugin for ART that allow you to morph between two paths.
+This project has been merged with the [main ART project](https://github.com/sebmarkbage/art)
